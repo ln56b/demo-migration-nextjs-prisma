@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  dev-db:
+    image: postgres:16.2
+    container_name: pgroll
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1se2cret3
+      POSTGRES_DB: pgroll
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
+    driver: local
